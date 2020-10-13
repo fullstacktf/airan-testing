@@ -33,4 +33,9 @@ describe("formatMoney", () => {
     const result = moneyFormat(2250.95);
     expect(result).toEqual("$2,250.95");
   });
+
+  it("formats large numbers", () => {
+    const result = moneyFormat(2212250.95);
+    expect(result).toEqual("$2,212,250.95");
+  });
 });

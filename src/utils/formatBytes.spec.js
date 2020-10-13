@@ -29,7 +29,12 @@ describe("formatBytes", () => {
   });
 
   it("formats in TBs", () => {
-    const result = formatBytes(1111111);
-    expect(result).toEqual("1TB 111GB 111MB");
+    const result = formatBytes(1000000);
+    expect(result).toEqual("1TB 000GB 0MB");
+  });
+
+  it("formats all", () => {
+    const result = formatBytes(1234567);
+    expect(result).toEqual("1TB 234GB 567MB");
   });
 });
