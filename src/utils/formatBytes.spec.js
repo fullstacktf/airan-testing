@@ -16,3 +16,20 @@ function assertEquals(result, expectedResult) {
     );
   }
 }
+
+describe("formatBytes", () => {
+  it("formats in MBs", () => {
+    const result = formatBytes(900);
+    expect(result).toEqual("900MB");
+  });
+
+  it("formats in GBs", () => {
+    const result = formatBytes(1600);
+    expect(result).toEqual("1GB 600MB");
+  });
+
+  it("formats in TBs", () => {
+    const result = formatBytes(1111111);
+    expect(result).toEqual("1TB 111GB 111MB");
+  });
+});

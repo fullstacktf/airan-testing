@@ -17,3 +17,20 @@ function assertEquals(result, expectedResult) {
     );
   }
 }
+
+describe("formatMoney", () => {
+  it("formats integer numbers", () => {
+    const result = moneyFormat(250);
+    expect(result).toEqual("$250.00");
+  });
+
+  it("formats numbers with two decimals", () => {
+    const result = moneyFormat(99.99);
+    expect(result).toEqual("$99.99");
+  });
+
+  it("formats large numbers", () => {
+    const result = moneyFormat(2250.95);
+    expect(result).toEqual("$2,250.95");
+  });
+});
