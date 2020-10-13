@@ -1,5 +1,8 @@
 function moneyFormat(number) {
-  return "$" + number.toFixed(2).toLocaleString("en-US");
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  }).format(number);
 }
 
 module.exports = moneyFormat;
